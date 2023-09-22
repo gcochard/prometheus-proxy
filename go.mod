@@ -1,4 +1,4 @@
-module github.com/nik-johnson-net/prometheus-proxy
+module github.com/gcochard/prometheus-proxy
 
 go 1.21.1
 

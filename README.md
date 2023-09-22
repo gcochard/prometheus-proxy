@@ -7,7 +7,7 @@ The Custom Collector proxy is a library for writing proxy collectors for Prometh
 ```go
 import (
 	"github.com/prometheus/client_golang/prometheus"
-	"github.com/nik-johnson-net/prometheus-proxy"
+	"github.com/gcochard/prometheus-proxy"
 )
 
 // factory is a function which takes a target and returns a Collector.
