@@ -18,12 +18,13 @@ type Application struct {
 
 // Main emulates func main() { } for simpler applications
 func Main(app Application) {
+	app.Flagset = *flag.NewFlagSet("", flag.ContinueOnError)
 	port := app.Flagset.Int("port", 2112, "the port to listen on")
-	listen := app.Flagset.String("listen", "127.0.0.1", "the address to listen on")
+	listen := app.Flagset.String("listen", "0.0.0.0", "the address to listen on")
 	err := app.Flagset.Parse(os.Args[1:])
-	if err != nil {
-		log.Fatal(err)
-	}
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
 
 	err = ListenAndServe(*listen, strconv.Itoa(*port), app.CreateFactory())
 	if err != nil {
